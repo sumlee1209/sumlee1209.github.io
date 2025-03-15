@@ -1,7 +1,7 @@
 title: Lee Chi Sum, Sam # your name (or website title) here
 logo: "/images/logo.png?raw=true" # your photo (or logo) here
 description: > # your text below (remove <br> elements if you don't need line breaks)
-
+  Hi, my name is Sam Lee and I'm a Full Stack Developer. Welcome to my personal website!
   <a href="/pdf/Portfolio.pdf" target="_blank" rel="nofollow">View My Resume</a>
 
 remote_theme: pages-themes/minimal@v0.2.0
