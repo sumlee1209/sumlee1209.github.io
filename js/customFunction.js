@@ -52,7 +52,7 @@ function createProjectBox(data){
     cardTitleWrapper.className = "cardTitleWrapper"
 
     let card = document.createElement("div");
-    card.className = "col-md-5 col-12 card";
+    card.className = "col-md-3 col-12 card";
     card.dataset.displayable = "1";
     card.dataset.projectclasses = ""
 

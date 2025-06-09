@@ -554,6 +554,6 @@ blockquote{
 }
 
 .container {
-    max-width: 1920px;
-    padding: 0px 130px;
+    max-width: 100%;
+    padding: 0px 30px;
 }
