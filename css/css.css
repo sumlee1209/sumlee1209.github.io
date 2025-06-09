@@ -1,0 +1,537 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+@import url('Animation.css');
+
+:root{
+    --backgroundColor: rgb(30, 30, 60);
+    --buttonBackground: rgba(60, 60, 60, 1);
+    --hoverColor: rgb(80, 180, 255);
+
+    --backgroundColorLight: rgba(40, 40, 70, 1);
+    --backgroundColorLightTrans: rgba(40, 40, 120, 1);
+    /*--backgroundColorLightTrans: rgba(40, 40, 120, 0.4);*/
+    --backgroundColorLightTransHover: rgba(40, 40, 120, 0.4);
+    /*--backgroundColorLightTransHover: rgba(40, 40, 120, 0.8);*/
+    --s: 0.5;
+}
+
+*{
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    color: white;
+    /*font-family: 'Roboto Mono', monospace;*/
+    font-family: var(--bs-font-monospace);
+
+}
+
+body{
+    background-color: var(--backgroundColor);
+    overflow-x: hidden;
+}
+/*
+.backgroundFileter{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: url("../img/background_texture.jpg");
+    z-index: -2;
+    mix-blend-mode: multiply;
+    opacity: 0.1;
+}
+*/
+section{
+    margin-bottom: 3rem;
+}
+
+/*
+::-webkit-scrollbar{
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888; 
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+}
+*/
+
+#navBar{
+    position: fixed;
+    display: flex;
+    bottom: 10%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    background-color: rgba(150, 150, 150, 0.1);
+    backdrop-filter: blur(0.5rem);
+    border-radius: 1rem;
+    user-select: none;
+    padding: 0.5rem;
+    flex-wrap: nowrap;
+}
+
+#navBar .fa{
+    position: relative;
+    font-size: 1.5rem;
+    color: white;
+    padding: 0.5rem;
+    text-decoration: none;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    border-radius: 50%;
+    margin: 0 0.1rem;
+    transition: 0.2s;
+}
+
+#navBar .fa:hover{
+    background: rgba(0, 0, 0, 0.2);
+}
+
+#navBar .fa.active{
+    background: var(--hoverColor);
+}
+
+#navBar .fa.active::after{
+    position: absolute;
+    content: attr(data-text);
+    font-size: 0.5rem;
+    left: 50%;
+    transform: translate(-50%, 0);
+    bottom: 0;
+    font-weight: bold;
+}
+
+#home{
+    min-height: 100vh;
+    display: flex;
+    text-align: center;
+    font-weight: bold;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#home .carousel-item img, #home .carousel-item .img{
+    aspect-ratio: 20/9;
+}
+
+.socialMediaBar{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    font-size: 1.2rem;
+    width: 36px;
+    bottom: 10%;
+}
+
+.socialMediaBar::after{
+    content: "";
+    display: block;
+    width: 3px;
+    height: 3rem;
+    background-color: var(--hoverColor);
+    margin-left: 50%;
+    transform: translate(-50%, 0);
+}
+
+.socialMediaBar a{
+    color: var(--hoverColor);
+    text-decoration: none;
+    margin: 0.5rem;
+    transition: 0.2s;
+    display: block;
+    height: 20px;
+    width: 20px;
+}
+
+.socialMediaBar a:hover{
+    color: var(--hoverColor);
+    filter: grayscale(0.5);
+}
+
+.scrollDown{
+    float: right;
+    writing-mode: vertical-rl;
+}
+
+.mypic1{
+    margin-top: 2rem;
+    display: block;
+    background: linear-gradient(0deg, transparent, var(--hoverColor));
+    /*
+    bottom: calc(100vh * -0.4);
+    clip-path: polygon(0 0, 100% 0, 100% 50%, 0% 50%);
+    height: 100vh;
+    */
+    padding: 1rem;
+}
+
+
+.button, .button2{
+    padding: calc(var(--s) * 1rem);
+    border-radius: 0.5rem;
+    line-height: 3rem;
+    color: var(--hoverColor);
+    border: 2px solid var(--hoverColor);
+    font-weight: bold;
+    cursor: pointer;
+    user-select: none;
+    white-space: nowrap;
+    margin-right: 0.5rem;
+    text-decoration: none;
+}
+
+.button:hover, .button.active{
+    background: var(--hoverColor);
+    color: var(--backgroundColor);
+}
+
+.button2{
+    background: var(--hoverColor);
+    color: var(--backgroundColor);
+    border: 2px solid var(--hoverColor);
+}
+
+.button2:hover, .button2.active{
+    color: var(--backgroundColor);
+    background: white;
+    border: 2px solid white;
+}
+
+.flex{
+    display: flex;
+}
+
+.flex-row{
+    flex-direction: row;
+}
+
+.flex-column{
+    flex-direction: column;
+}
+
+.flex-center{
+    justify-content: center;
+}
+
+.flex-space-around{
+    justify-content: space-around;
+}
+
+#about .picContainer{
+    display: block;
+    width: 90%;
+    aspect-ratio: 1/1;
+    border-radius: 1rem;
+    background-color: var(--hoverColor);
+    position: relative;
+}
+
+#about .picContainer::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: var(--hoverColor);
+    transform: rotate(7deg);
+    border-radius: 1rem;
+    filter: grayscale(0.5);
+}
+
+#about .aboutGrid{
+    display: grid;
+    /*grid-template-columns: repeat(4, 1fr);*/
+    grid-auto-columns: 1fr;
+    grid-template-areas: 
+    'one two two three' 
+    'four four five three';
+    padding-block: 2rem;
+    gap: 1rem;
+}
+
+@media screen and (max-width: 768px) {
+    #about .aboutGrid{
+        grid-template-areas: 
+        'two two'
+        'one three'
+        'five three'
+        'four four';
+    }
+}
+
+@media screen and (max-width: 576px) {
+    #about .aboutGrid{
+        grid-template-areas: 
+        'one five'
+        'two two'
+        'three three'
+        'four four';
+    }
+}
+
+#about .aboutGrid .card:nth-child(1){
+    grid-area: one;
+}
+
+#about .aboutGrid .card:nth-child(2){
+    grid-area: two;
+}
+
+#about .aboutGrid .card:nth-child(3){
+    grid-area: three;
+}
+
+#about .aboutGrid .card:nth-child(4){
+    grid-area: four;
+}
+
+#about .aboutGrid .card:nth-child(5){
+    grid-area: five;
+}
+
+/*
+.grid-column-1{
+    grid-column: span 1;
+}
+
+.grid-column-2{
+    grid-column: span 2;
+}
+
+.grid-row-2{
+    grid-column-start: 4;
+    grid-row-start: 1;
+    grid-row-end: span 2;
+}
+*/
+.sectionTitle{
+    color: var(--hoverColor);
+    font-weight: bold;
+}
+
+.card{
+    border: 2px solid var(--backgroundColorLight);
+    background-color: var(--backgroundColorLightTrans);
+    backdrop-filter: blur(0.2rem);
+    border-radius: 1rem;
+    padding: 1rem;
+    transition: 0.25s;
+    margin-top: 1rem;
+}
+
+.card:hover{
+    background-color: var(--backgroundColorLightTransHover);
+}
+
+.card.more{
+    cursor: pointer;
+}
+
+.card.more::after{
+    content: '》';
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+    user-select: none;
+    writing-mode: vertical-lr;
+    left: 50%;
+    transform: translate(-50%, 0);
+    color: var(--hoverColor);
+    font-size: 2rem;
+}
+
+.card.more:hover::after{
+    animation: cardMoreHover 0.5s;
+}
+
+.card .cardTitle{
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.card div div{
+    padding: 1rem 0;
+    font-size: 1.2rem;
+}
+
+.card .info{
+    width: 100%;
+}
+
+#skill .fa{
+    color: var(--hoverColor);
+}
+
+#project .card{
+    border-radius: 2rem;
+    padding: 2rem 1rem;
+    margin: 1rem;
+    justify-content: space-between;
+}
+
+#project .card .cardTitle{
+    font-size: 1.2rem;
+    text-align: left;
+}
+
+#project .card .image{
+    display: block;
+    aspect-ratio: 16/9;
+    background: var(--img);
+    background-size: cover;
+    background-position: center;
+    border-radius: 2rem;
+    transition: 0.2s;
+}
+
+#project .card:hover .image{
+    scale: 1.04;
+}
+
+#project .card div{
+    margin: 0.5rem 0;
+}
+
+#pageButton{
+    text-align: center;
+}
+
+#SendMessageForm input, #SendMessageForm textarea{
+    font-size: 1.5rem;
+    border-bottom: 1px solid #dbdbdb;
+    border-top:0px;
+    border-left:0px;
+    border-right:0px;
+    background-color: transparent;
+    color: white;
+    margin-bottom: 0.5rem;
+}
+
+#SendMessageForm textarea{
+    height: 10rem;
+}
+
+#footer{
+    background-color: var(--hoverColor);
+    width: 100vw;
+    color: var(--backgroundColor);
+    font-weight: bold;
+    text-align: center;
+    padding: 3rem 0 10rem 0;
+    margin-top: 5rem;
+}
+
+.socialMediaBarFooter{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.socialMediaBarFooter .fa{
+    color: white;
+    background-color: var(--backgroundColor);
+    border-radius: 0.5rem;
+    display: block;
+    height: 3rem;
+    width: 3rem;
+    line-height: 3rem;
+    font-size: 1.5rem;
+    text-decoration: none;
+    text-align: center;
+    margin: 1.5rem;
+}
+
+.footerNavBar a{
+    position: relative;
+    color: var(--backgroundColor);
+    font-weight: lighter;
+    margin: 2rem;
+    text-decoration: none;
+}
+
+.footerNavBar a::before{
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    border-bottom: 0px solid var(--backgroundColor);
+    transition: 0.2s;
+}
+
+.footerNavBar a:hover::before{
+    width: 100%;
+    border-bottom: 1px solid var(--backgroundColor);
+}
+
+#projectClass .button{
+    margin: 1rem 0.5rem;
+    word-break: keep-all;
+}
+/* 
+code{
+    display: block;
+    background: gray;
+    padding: 16px;
+    overflow: auto;
+    font-size: 85%;
+    line-height: 1.45;
+    border-radius: 6px;
+}
+
+blockquote{
+    padding: 0 1em;
+    color: lightgray;
+    border-left: 0.25em solid gray;
+    margin: 0.5rem 0;
+}
+ */
+
+#projectModal .modal-body img{
+    max-width: 100%;
+}
+
+#projectModal .modal-body h2, #projectModal .modal-body h1{
+    border-bottom: 1px solid white;
+    font-weight: bold;
+}
+
+#projectModal .modal-body h2, #projectModal .modal-body h3{
+    margin-top: 2rem
+}
+
+#projectModal .modal-body iframe{
+    width: 100%;
+    aspect-ratio: 18/9;
+}
+
+.descriptionGrid{
+    display: grid;
+    grid-template-columns: 1rem 6rem 3fr;
+    gap: 0.2rem;
+}
+
+.descriptionGrid .icon{
+    grid-column-start: 1;
+}
+
+.descriptionGrid .title{
+    grid-column-start: 2;
+}
+
+.descriptionGrid .content{
+    grid-column-start: 3;
+    word-wrap: break-word;
+    word-break: break-all;
+}
