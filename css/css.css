@@ -3,9 +3,10 @@
 
 :root{
     /* --backgroundColor: rgb(30, 30, 60); */
-    --backgroundColor: white;
+    --backgroundColor: black;
     --buttonBackground: rgba(60, 60, 60, 1);
-    --hoverColor: rgb(69, 70, 71);
+    --hoverColor: white;
+    /* --hoverColor: rgb(69, 70, 71); */
 
     --backgroundColorLight: rgba(40, 40, 70, 1);
     --backgroundColorLightTrans: rgb(69, 70, 71);
@@ -18,7 +19,7 @@
 *{
     box-sizing: border-box;
     scroll-behavior: smooth;
-    color: black;
+    color: white;
     /*font-family: 'Roboto Mono', monospace;*/
     font-family: var(--bs-font-monospace);
 
