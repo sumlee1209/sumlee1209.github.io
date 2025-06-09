@@ -2,14 +2,15 @@
 @import url('Animation.css');
 
 :root{
-    --backgroundColor: rgb(30, 30, 60);
+    /* --backgroundColor: rgb(30, 30, 60); */
+    --backgroundColor: white;
     --buttonBackground: rgba(60, 60, 60, 1);
-    --hoverColor: rgb(80, 180, 255);
+    --hoverColor: rgb(69, 70, 71);
 
     --backgroundColorLight: rgba(40, 40, 70, 1);
-    --backgroundColorLightTrans: rgba(40, 40, 120, 1);
+    --backgroundColorLightTrans: rgb(69, 70, 71);
     /*--backgroundColorLightTrans: rgba(40, 40, 120, 0.4);*/
-    --backgroundColorLightTransHover: rgba(40, 40, 120, 0.4);
+    --backgroundColorLightTransHover: rgba(69, 70, 71, 0.8);
     /*--backgroundColorLightTransHover: rgba(40, 40, 120, 0.8);*/
     --s: 0.5;
 }
@@ -17,7 +18,7 @@
 *{
     box-sizing: border-box;
     scroll-behavior: smooth;
-    color: white;
+    color: black;
     /*font-family: 'Roboto Mono', monospace;*/
     font-family: var(--bs-font-monospace);
 
@@ -322,8 +323,8 @@ section{
     border: 2px solid var(--backgroundColorLight);
     background-color: var(--backgroundColorLightTrans);
     backdrop-filter: blur(0.2rem);
-    border-radius: 1rem;
-    padding: 1rem;
+    border-radius: 8px;
+    /* padding: 1rem; */
     transition: 0.25s;
     margin-top: 1rem;
 }
@@ -336,7 +337,7 @@ section{
     cursor: pointer;
 }
 
-.card.more::after{
+/* .card.more::after{
     content: '》';
     position: absolute;
     bottom: 0;
@@ -347,7 +348,7 @@ section{
     transform: translate(-50%, 0);
     color: var(--hoverColor);
     font-size: 2rem;
-}
+} */
 
 .card.more:hover::after{
     animation: cardMoreHover 0.5s;
@@ -357,6 +358,7 @@ section{
     text-align: center;
     font-size: 1.5rem;
     font-weight: bold;
+    color:white;
 }
 
 .card div div{
@@ -373,8 +375,9 @@ section{
 }
 
 #project .card{
-    border-radius: 2rem;
-    padding: 2rem 1rem;
+    /* border-radius: 2rem;
+    padding: 2rem 1rem; */
+    overflow: hidden;
     margin: 1rem;
     justify-content: space-between;
 }
@@ -390,8 +393,17 @@ section{
     background: var(--img);
     background-size: cover;
     background-position: center;
-    border-radius: 2rem;
+    /* border-radius: 2rem; */
     transition: 0.2s;
+}
+
+#project .card .cardTitleWrapper{
+    padding: 10px;
+}
+
+#project .card .cardTitleWrapper div{
+    margin: 0px;
+    padding: 0px;
 }
 
 #project .card:hover .image{
@@ -534,4 +546,8 @@ blockquote{
     grid-column-start: 3;
     word-wrap: break-word;
     word-break: break-all;
+}
+
+.modal-body *{
+    color: white;
 }

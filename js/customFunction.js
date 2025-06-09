@@ -48,8 +48,11 @@ function createProjectBox(data){
 
     let tempClass = 0;
 
+    let cardTitleWrapper = document.createElement("div");
+    cardTitleWrapper.className = "cardTitleWrapper"
+
     let card = document.createElement("div");
-    card.className = "col-md-3 col-12 card";
+    card.className = "col-md-6 col-12 card";
     card.dataset.displayable = "1";
     card.dataset.projectclasses = ""
 
@@ -111,7 +114,6 @@ function createProjectBox(data){
         div.append(button2);
     }
 
-    
     let timeAndBoss = document.createElement("div");
 
     if(data[6] != ""){
@@ -131,18 +133,21 @@ function createProjectBox(data){
     }
 
     card.append(image);
-    card.append(cardTitle);
+    // card.append(cardTitle);
+    cardTitleWrapper.append(cardTitle);
 
     if(data[5] != ""){
         //console.log(data[5])
         let tech = document.createElement("span");
         tech.className = "fs-6 text-light info";
         tech.innerHTML = data[5]
-        card.append(tech);
+        cardTitleWrapper.append(tech);
     }
-
-    card.append(timeAndBoss)
-    card.append(div);
+    cardTitleWrapper.append(timeAndBoss);
+    cardTitleWrapper.append(div);
+    card.append(cardTitleWrapper);
+    // card.append(timeAndBoss)
+    // card.append(div);
 
     document.querySelector("#projectContainer").append(card);
     
